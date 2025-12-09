@@ -54,7 +54,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS", "").split(",")
+CORS_ALLOWED_ORIGINS = ["http://localhost:8000", "http://localhost:5173" , 
+                        "https://navkalpit-frontend.vercel.app/",]
 
 ALLOWED_HOSTS = ['*']
 

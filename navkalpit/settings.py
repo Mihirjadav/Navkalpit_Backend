@@ -85,14 +85,13 @@ WSGI_APPLICATION = 'navkalpit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('MYSQL_DATABASE'),
+        'NAME': os.getenv('MYSQLDATABASE'),
         'USER': os.getenv('MYSQLUSER'),
         'PASSWORD': os.getenv('MYSQLPASSWORD'),
         'HOST': os.getenv('MYSQLHOST'),
         'PORT': os.getenv('MYSQLPORT'),
         "OPTIONS": {
             "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-            "ssl": {"ca": "/etc/ssl/certs/ca-certificates.crt"},
         }
     }
 }

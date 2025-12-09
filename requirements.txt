@@ -8,3 +8,5 @@ gunicorn
 setuptools
 whitenoise
 python-dotenv
+django-environ
+python-decouple

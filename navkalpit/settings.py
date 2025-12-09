@@ -54,8 +54,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:8000", "http://localhost:5173" , 
-                        "https://navkalpit-frontend.vercel.app/",]
+CORS_ALLOWED_ORIGINS = [ 
+                        "https://navkalpit-frontend.vercel.app",]
 
 ALLOWED_HOSTS = ['*']
 

@@ -55,8 +55,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ORIGINS = [
-    "https://navkalpit-frontend.vercel.app"
+    "https://navkalpit-frontend.vercel.app",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'Backend.urls'
 

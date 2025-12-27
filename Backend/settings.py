@@ -26,12 +26,10 @@ SECRET_KEY = 'django-insecure-+vu3yye=vu*#s30(lpybme^u9+!+8frh8q&+y!6(g+8+)g=4ws
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
-
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ORIGINS = [
+CORS_ALLOWED_ORIGINS = [
     "https://navkalpit-frontend.vercel.app",
 ]
 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,7 +54,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ORIGINS = [
+    "https://navkalpit-frontend.vercel.app"
+]
 
 ROOT_URLCONF = 'Backend.urls'
 
@@ -77,6 +80,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:3000',
 ]
 
+ALLOWED_HOSTS = ['localhost','*']
 
 WSGI_APPLICATION = 'Backend.wsgi.application'
 
@@ -87,11 +91,14 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'navkalpit',
-        'USER':'root',
-        'PASSWORD':'$jmihir2782003',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'NAME': config('MYSQL_DATABASE'),
+        'USER': config('MYSQLUSER'),
+        'PASSWORD': config('MYSQLPASSWORD'),
+        'HOST': config('MYSQLHOST'),
+        'PORT': config('MYSQLPORT'),
+        "OPTIONS": {
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
     }
 }
 
@@ -151,3 +158,7 @@ AUTHENTICATION_BACKENDS = [
     'api.backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+# custom user model
+AUTH_USER_MODEL = 'accounts.User'
+STATIC_ROOT = BASE_DIR / 'staticfiles'

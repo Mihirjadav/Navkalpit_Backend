@@ -5,9 +5,9 @@ PyMySQL==1.1.1
 django-cors-headers==4.3.0
 cryptography>=41.0.0
 
-# gunicorn
+gunicorn
 setuptools
 whitenoise
 python-dotenv
-# django-environ
-# python-decouple
+django-environ
+python-decouple

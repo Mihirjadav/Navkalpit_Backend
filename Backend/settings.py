@@ -75,11 +75,6 @@ TEMPLATES = [
     },
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-]
-
 ALLOWED_HOSTS = ['localhost','*']
 
 WSGI_APPLICATION = 'Backend.wsgi.application'
@@ -149,8 +144,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
-
-CORS_ALLOW_ALL_ORIGINS = True
 
 # authentications 
 

@@ -160,5 +160,5 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # custom user model
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = 'api.User'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
